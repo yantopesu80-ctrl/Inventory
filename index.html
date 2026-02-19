@@ -2,33 +2,46 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Inventory</title> <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/notepad.png">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aplikasi Inventory</title>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/notepad.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     
     <style>
-        /* CSS Reset agar tidak ada margin putih di pinggir */
+        /* Menggunakan height: 100dvh (Dynamic Viewport Height) untuk HP Modern */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: hidden; /* Hilangkan scrollbar ganda browser */
-            background-color: #f6f7fb; /* Samakan warna background dengan Apps Script */
+            overflow: hidden;
+            background-color: #f6f7fb;
         }
         
-        /* Setting Iframe Full Layar */
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
         iframe {
             display: block;
             border: none;
-            width: 100vw;  /* 100% Lebar Viewport */
-            height: 100vh; /* 100% Tinggi Viewport */
+            width: 100%;
+            height: 100%;
+            /* Penting: Pastikan iframe tidak meluap keluar layar */
+            flex-grow: 1;
         }
     </style>
 </head>
 <body>
 
-    <iframe src="https://script.google.com/macros/s/AKfycbwE0SX7pcUTaSzdM7QXFOdIV99K5TnTLjRt7-k2MADzD0n4va8xjG-lytBUGdpn-6Xh/exec" allow="geolocation; camera; microphone"></iframe>
+    <div class="container">
+        <iframe src="https://script.google.com/macros/s/AKfycbwE0SX7pcUTaSzdM7QXFOdIV99K5TnTLjRt7-k2MADzD0n4va8xjG-lytBUGdpn-6Xh/exec" allow="geolocation; camera; microphone"></iframe>
+    </div>
 
 </body>
 </html>
